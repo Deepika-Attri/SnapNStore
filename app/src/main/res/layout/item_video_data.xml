@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dimen_16dp"
+    android:layout_marginTop="@dimen/dimen_8dp"
+    android:layout_marginEnd="@dimen/dimen_16dp"
+    android:layout_marginBottom="@dimen/dimen_8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivThumbnail"
+            android:layout_width="@dimen/dimen_96dp"
+            android:layout_height="@dimen/dimen_96dp"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ThumbnailShape"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tvFileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivThumbnail"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:maxLines="1"
+            tools:text="@tools:sample/lorem/random" />
+
+        <TextView
+            android:id="@+id/tvFileSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintStart_toStartOf="@id/tvFileName"
+            app:layout_constraintTop_toBottomOf="@id/tvFileName"
+            tools:text="12.05 MB" />
+
+        <TextView
+            android:id="@+id/tvFileDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintStart_toEndOf="@id/tvFileSize"
+            app:layout_constraintTop_toTopOf="@id/tvFileSize"
+            tools:text="120:00 Min" />
+
+        <TextView
+            android:id="@+id/tvFileType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+            app:layout_constraintStart_toStartOf="@id/tvFileName"
+            app:layout_constraintTop_toBottomOf="@id/tvVideoResolution"
+            tools:text="image/jpeg" />
+
+        <TextView
+            android:id="@+id/tvVideoResolution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintStart_toStartOf="@id/tvFileName"
+            app:layout_constraintTop_toBottomOf="@id/tvFileSize"
+            tools:text="1080 x 1920 px" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPlay"
+            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tvFileName"
+            app:layout_constraintTop_toBottomOf="@id/tvFileDuration" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
